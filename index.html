@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #message1 {
+            color: tomato;
+        }
+
+        #message2 {
+            color: deeppink;
+        }
+
+        #message3 {
+            color: navy; 
+        }
+    </style>
+</head>
+<body>
+    <h1 id="message1"></h1>
+    <h2 id="message2"></h2>
+    <h3 id="message3"></h3>
+
+    <script>
+        const msg1 = document.getElementById('message1');
+        const msg2 = document.getElementById('message2');
+        const msg3 = document.getElementById('message3');
+
+        // Function to simulate order placement
+        function placeOrder(callback) {
+            msg1.innerHTML = "Your order is taken for cheese barbecue pizza";
+
+            setTimeout(function () {
+                msg2.innerHTML = "Your order for cheese barbecue pizza is ready!";
+                callback();
+            }, 3000);
+        }
+
+        function orderReadyCallback() {
+            msg3.innerHTML = "Your order is on its way!";
+        }
+
+        placeOrder(orderReadyCallback);
+    </script>
+</body>
+</html>
